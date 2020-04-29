@@ -39,9 +39,26 @@ const tarefa = lista.querySelectorAll('label');
 
 console.log(tarefa);
 
+
+//botao de marcar tudo
+const buttontodoMarcarTodos = document.querySelector('#todoMarcarTodos');
+buttontodoMarcarTodos.addEventListener('click', function(){
+  const listacheckbox = lista.querySelectorAll('input')// meu array
+
+// aqui a gente ta pegando a quatidade de tarefas que o usuario colocou e esse i eé o nosso contador 
+  for (let i = 0; i<listacheckbox.length; i++){
+    listacheckbox[i].checked = true;
+  }
+
+
+})
 /**
  * DELETE
  * 
  * Na tarefa exibida na lista, devo poder apagar um tarefa especifica;
  * No rodapé do projeto um botão "Limpar lista", deve remover todas as tarefas já realizadas;
  */
+const buttontodoRemoverTodos = document.querySelector('#todoRemoverTodos');
+buttontodoRemoverTodos.addEventListener('click', function(){
+lista.innerHTML='';
+}) 

@@ -71,6 +71,8 @@ body {
 .todo__tarefas-lista li .checked {
     color: #ccc;
     text-decoration: line-through; 
+    
+
 }
 
 .todo__tarefas-lista li.over {
