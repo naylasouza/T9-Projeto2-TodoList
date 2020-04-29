@@ -3,8 +3,11 @@
 // todoInput
 
 const input = document.querySelector("#todoInput");
-const submit = document.querySelector("#todoSubmit");
+const form = document.querySelector("#todoForm");
 const lista = document.querySelector("#todoLista");
+
+input.required = true;
+
 
 /**
  * CREATE/READ
@@ -14,19 +17,15 @@ const lista = document.querySelector("#todoLista");
  * = Deve ser exibido a tarefa na lista de tarefas abaixo;
  */
 
-submit.onclick = function (evento) {
+form.onsubmit = function (evento) {
   evento.preventDefault();
 
   const tarefa = document.createElement('li');
   
-  tarefa.innerHTML = `
-    <label>
-      <input type="checkbox">
-      ${input.value}
-    </label>
-  `
-
+  tarefa.innerHTML = ` <label> <input type="checkbox"> ${input.value} </label> `
+ 
   lista.appendChild(tarefa);
+  input.value='';
 };
 
 /**
