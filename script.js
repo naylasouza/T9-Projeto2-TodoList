@@ -19,12 +19,13 @@ input.required = true;
 
 form.onsubmit = function (evento) {
   evento.preventDefault();
-
+//criamos nosso elemento para a tarefa
   const tarefa = document.createElement('li');
-  
+ //criamos a label e check com o texto que foi inserido no campo (escrevendo o html dentro do elemento)
   tarefa.innerHTML = ` <label> <input type="checkbox"> ${input.value} </label> `
- 
-  lista.appendChild(tarefa);
+ // o apendice coloca o elemento dentro da lista de tarefa
+  lista.appendChild(tarefa );
+  //limpa
   input.value='';
 };
 
@@ -43,7 +44,7 @@ console.log(tarefa);
 //botao de marcar tudo
 const buttontodoMarcarTodos = document.querySelector('#todoMarcarTodos');
 buttontodoMarcarTodos.addEventListener('click', function(){
-  const listacheckbox = lista.querySelectorAll('input')// meu array
+  const listacheckbox = lista.querySelectorAll('input')// meu array (checkbox)
 
 // aqui a gente ta pegando a quatidade de tarefas que o usuario colocou e esse i eé o nosso contador 
   for (let i = 0; i<listacheckbox.length; i++){
